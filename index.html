@@ -17,15 +17,15 @@
             </div>
 
             <div class="new-todo">
-                <input v-model='userNewTodo' type="text" placeholder="Nuovo ToDo">
+                <input v-model='userNewTodo' @keyup.enter="addNewTodo" type="text" placeholder="Nuovo ToDo">
                 <button @click="addNewTodo">Aggiungi</button>
             </div>
 
             <div class="todo-container">
                 <ul class="todo-list">
-                    <li  v-for="todo in todos">
+                    <li  v-for="(todo, index) in todos">
                         {{todo}}
-                        <span class="delete">
+                        <span class="delete" @click="deleteTodo(index)">
                             <i class="fas fa-times"></i>
                         </span>
                     </li>

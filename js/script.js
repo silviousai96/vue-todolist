@@ -6,8 +6,8 @@ var app = new Vue({
         userNewTodo: '',
         todos: [
             'Fare i compiti',
-            'fare la spesa',
-            'fare il bucato'
+            'Fare la spesa',
+            'Fare il bucato'
         ],
     },
     methods: {
@@ -19,6 +19,10 @@ var app = new Vue({
                 this.todos.push(this.userNewTodo); 
                 this.userNewTodo = '';
             }          
+        },
+
+        deleteTodo(index) {
+            this.todos.splice(0, 1);
         }
     },
 });
