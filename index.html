@@ -17,32 +17,20 @@
             </div>
 
             <div class="new-todo">
-                <input type="text" placeholder="Nuovo ToDo">
-                <button>Aggiungi</button>
+                <input v-model='userNewTodo' type="text" placeholder="Nuovo ToDo">
+                <button @click="addNewTodo">Aggiungi</button>
             </div>
 
             <div class="todo-container">
                 <ul class="todo-list">
-                    <li>
-                        Fare i compiti
+                    <li  v-for="todo in todos">
+                        {{todo}}
                         <span class="delete">
                             <i class="fas fa-times"></i>
                         </span>
                     </li>
 
-                    <li>
-                        Fare la spesa
-                        <span class="delete">
-                            <i class="fas fa-times"></i>
-                        </span>
-                    </li>
-
-                    <li>
-                        Fare il bucato
-                        <span class="delete">
-                            <i class="fas fa-times"></i>
-                        </span>
-                    </li>
+                    
                     
                 </ul>
             </div>
@@ -50,6 +38,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
